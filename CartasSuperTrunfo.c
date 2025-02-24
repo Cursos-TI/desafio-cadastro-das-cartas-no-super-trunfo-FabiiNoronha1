@@ -9,6 +9,9 @@ int main() {
     float AreaEmKm01, AreaEmKm02;
     float PIB01, PIB02;
     int NumeroPontoTuristico01, NumeroPontoTuristico02;
+    float Densidade01, Densidade02;
+    float PIBperCapita01, PIBperCapita02;
+    float Quociente; // Semikolon hinzugefügt
 
     // Cadastro Carta 01:
     printf("Digite o nome do Estado01: \n");
@@ -39,7 +42,10 @@ int main() {
     printf("Populacao01: %d \n", Populacao01);
     printf("AreaEmKm01: %f \n", AreaEmKm01);
     printf("PIB01: %f\n", PIB01);
-    printf("NumeroPontoTuristico01: %d \n", NumeroPontoTuristico01);
+    Quociente = Populacao01 / AreaEmKm01; // Division als float
+    printf("Densidade: %.2f\n", Quociente);
+    Quociente = PIB01 / Populacao01; // Division als float
+    printf("PIB per Capita: %.2f\n", Quociente);
 
     // Cadastro Carta 02:
     printf("Digite o nome do Estado02: \n");
@@ -70,11 +76,10 @@ int main() {
     printf("Populacao02: %d \n", Populacao02);
     printf("AreaEmKm02: %f \n", AreaEmKm02);
     printf("PIB02: %f\n", PIB02);
-    printf("NumeroPontoTuristico02: %d \n", NumeroPontoTuristico02);
+    Quociente = Populacao02 / AreaEmKm02; // Division als float
+    printf("Densidade: %.2f\n", Quociente);
+    Quociente = PIB02 / Populacao02; // Division als float
+    printf("PIB per Capita: %.2f\n", Quociente);
 
     return 0;
 }
-
-              
-
-    
