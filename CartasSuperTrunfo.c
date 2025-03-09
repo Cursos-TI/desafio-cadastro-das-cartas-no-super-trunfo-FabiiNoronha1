@@ -14,14 +14,15 @@ int main() {
     float Quociente; // Semikolon hinzugefügt
 
     // Cadastro Carta 01:
+
     printf("Digite o nome do Estado01: \n");
-    scanf("%s", Estado01);
+    scanf("%s", &Estado01);
 
     printf("Digite o Código da Carta01: \n");
-    scanf("%s", CodCarta01);
+    scanf("%s", &CodCarta01);
 
     printf("Digite Cidade01: \n");
-    scanf("%s", Cidade01);
+    scanf("%s", &Cidade01);
 
     printf("Digite a Quantidade da População01: \n");
     scanf("%d", &Populacao01);
@@ -49,13 +50,13 @@ int main() {
 
     // Cadastro Carta 02:
     printf("Digite o nome do Estado02: \n");
-    scanf("%s", Estado02);
+    scanf("%s", &Estado02);
 
     printf("Digite o Código da Carta02: \n");
-    scanf("%s", CodCarta02);
+    scanf("%s", &CodCarta02);
 
     printf("Digite Cidade02: \n");
-    scanf("%s", Cidade02);
+    scanf("%s", &Cidade02);
 
     printf("Digite a Quantidade da População02: \n");
     scanf("%d", &Populacao02);
@@ -80,6 +81,29 @@ int main() {
     printf("Densidade: %.2f\n", Quociente);
     Quociente = PIB02 / Populacao02; // Division als float
     printf("PIB per Capita: %.2f\n", Quociente);
+
+  
+
+    // Calculando super poder das cartas 1 e 2
+
+    float SuperPoder01 = (float) Populacao01 + AreaEmKm01 + PIB01 + PIBperCapita01 + NumeroPontoTuristico01;
+    float SuperPoder02 = (float) Populacao02 + AreaEmKm02 + PIB02 + PIBperCapita02 + NumeroPontoTuristico02;
+
+    // Calculando o inverso da densidade 
+
+    float InversoDensidade01 = (Densidade01 > 0) * (1 / Densidade01);
+    float InversoDensidade02 = (Densidade02 > 0) * (1 / Densidade02);
+
+    // Comparação das Cartas
+  
+         printf("Comparação das cartas: \n");
+         printf("Vencedor em populacao: Carta %d\n", (Populacao01> Populacao02) * 1 + (Populacao01 <= Populacao02) * 2);
+         printf("Vencedor em area: Carta %d\n", (AreaEmKm01 > AreaEmKm02) * 1 + (AreaEmKm01 <= AreaEmKm02) * 2);
+         printf("Vencedor em PIB: Carta %d\n", (PIB01 > PIB02) * 1 + (PIB01 <= PIB02) * 2);
+         printf("Vencedor em pontos turisticos: Carta %d\n", (NumeroPontoTuristico01 > NumeroPontoTuristico02) * 1 + (NumeroPontoTuristico01 <= NumeroPontoTuristico02) * 2);
+         printf("Vencedor em Densidade Populacional: Carta %d\n", (Densidade01 < Densidade01) * 1 + (Densidade01 >= Densidade02) * 2);
+         printf("Vencedor em PIB per capta: Carta %d\n", (PIBperCapita01 > PIBperCapita02) * 1 + (PIBperCapita01 <= PIBperCapita02) * 2);
+         printf("Vencedor em Super Poder: Carta %d\n", (SuperPoder01 > SuperPoder02) * 1 + (SuperPoder01 <= SuperPoder02) * 2);
 
     return 0;
 }
