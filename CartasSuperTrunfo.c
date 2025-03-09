@@ -11,7 +11,7 @@ int main() {
     int NumeroPontoTuristico01, NumeroPontoTuristico02;
     float Densidade01, Densidade02;
     float PIBperCapita01, PIBperCapita02;
-    float Quociente; // Semikolon hinzugefügt
+    float Quociente; 
 
     // Cadastro Carta 01:
 
